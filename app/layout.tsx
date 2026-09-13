@@ -31,6 +31,11 @@ export const metadata: Metadata = {
   ],
   category: "construction",
   alternates: { canonical: "/" },
+  icons: {
+    icon: [{ url: "/icon.png", type: "image/png", sizes: "512x512" }],
+    shortcut: [{ url: "/icon.png" }],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180" }],
+  },
   openGraph: {
     type: "website",
     locale: "en_IN",
@@ -38,11 +43,17 @@ export const metadata: Metadata = {
     url: site.url,
     title: `${site.name} — civil engineering & construction in ${site.city}`,
     description: `Turnkey construction, structural design and interiors across ${site.region}.`,
+    images: [{
+      url: "/og.png", width: 1200, height: 630,
+      alt: `${site.name} — the only polygon that cannot deform`,
+      type: "image/png",
+    }],
   },
   twitter: {
     card: "summary_large_image",
     title: `${site.name} — civil engineering & construction`,
     description: `Turnkey construction, structural design and interiors across ${site.region}.`,
+    images: ["/og.png"],
   },
   robots: {
     index: true, follow: true,
