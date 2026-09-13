@@ -247,7 +247,7 @@ export const assurance = [
 export const faqs = [
   {
     q: "What does construction cost per square foot in Hyderabad?",
-    a: "It depends almost entirely on specification, not on the builder. A standard residential turnkey package using M25 concrete, Fe 500D steel, AAC blocks and vitrified flooring generally falls in a band we will quote you in writing after seeing the plot and your drawings. We publish our full material specification on this site so you can compare any two quotes line by line instead of comparing headline rates.",
+    a: "It depends almost entirely on specification, not on the builder. A standard residential turnkey package using M25 concrete, Fe 500D steel, AAC blocks and vitrified flooring generally falls in a band we will quote you in writing after seeing the plot and your drawings. Our published rates and a stage-by-stage breakdown are on the cost page, so you can do the sum yourself before calling anyone. We also publish the full material specification, so you can compare any two quotes line by line instead of comparing headline rates.",
   },
   {
     q: "How long does a G+1 house take to build?",

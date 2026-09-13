@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: at("/"), lastModified: now, changeFrequency: "monthly", priority: 1 },
     { url: at("/works/"), lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: at("/services/"), lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: at("/estimate/"), lastModified: now, changeFrequency: "monthly", priority: 0.95 },
     { url: at("/about/"), lastModified: now, changeFrequency: "yearly", priority: 0.7 },
     { url: at("/process/"), lastModified: now, changeFrequency: "yearly", priority: 0.7 },
     { url: at("/faq/"), lastModified: now, changeFrequency: "monthly", priority: 0.7 },
