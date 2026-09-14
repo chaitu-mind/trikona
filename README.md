@@ -45,7 +45,20 @@ You never need to touch a component to change content.
 | `lib/site.ts`      | Name, contact, address, service area, the three founders |
 | `lib/works.ts`     | The project record — one entry becomes one page        |
 | `lib/content.ts`   | Services, the six stages, the specification table, FAQ  |
+| `lib/rates.ts`     | **Your rates.** Drives the cost estimator               |
 | `lib/nav.ts`       | What appears in the menu                                |
+
+### The rates file needs your attention before anything else
+
+`lib/rates.ts` is the only file on this site that states a number a client can
+hold you to. The three package rates in it are indicative Hyderabad bands, not
+your rates. Replace them.
+
+The cost split across the ten stages reflects how a residential RCC build
+actually distributes, so you can leave it alone unless your own costing says
+otherwise. The payment schedule and the exclusions list are yours to set, and
+the exclusions matter most: that list is what stops an argument later about
+whether the compound wall was in the price.
 
 ### Adding a real project
 
