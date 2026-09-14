@@ -107,7 +107,7 @@ export default function Estimator() {
                 <tr key={c.stage}>
                   <th scope="row"><span>{c.stage}</span><em>{c.note}</em></th>
                   <td className="mono">
-                    <span className="bar" style={{ ["--p" as string]: `${c.pct * 3.4}%` }} aria-hidden="true" />
+                    <span className="bar" style={{ ["--p" as string]: `${c.pct * 3.2}px` }} aria-hidden="true" />
                     {c.pct}%
                   </td>
                   <td className="mono">₹{inr((derived.mid * c.pct) / 100)}</td>

@@ -673,3 +673,115 @@ dialog.sheetdlg::backdrop{ background:rgba(8,14,18,.62); backdrop-filter:blur(2p
   font-family:var(--mono); font-size:var(--fs-micro); letter-spacing:.06em;
   border:1px solid var(--rule); padding:4px 8px; color:var(--graphite); white-space:nowrap;
 }
+
+/* ============================================================
+   17. Cost estimator
+   ============================================================ */
+.est{ display:grid; gap:clamp(26px,3.4vw,40px); }
+@media (min-width:1040px){
+  .est{ grid-template-columns:368px 1fr; align-items:start; }
+  .est__form{ position:sticky; top:calc(var(--hdr) + 20px); }
+}
+
+.est__form{
+  display:grid; gap:20px; align-content:start;
+  border:1px solid var(--rule-hard); background:var(--sheet); padding:clamp(18px,2.4vw,24px);
+}
+.est__form fieldset{ border:0; margin:0; padding:0; display:grid; gap:6px; }
+.est__form legend{
+  padding:0; font-family:var(--mono); font-size:var(--fs-micro);
+  letter-spacing:.13em; text-transform:uppercase; color:var(--graphite);
+}
+.field__note{ font-size:var(--fs-micro); color:var(--faint); letter-spacing:.04em; }
+
+/* floor selector */
+.seg{ display:grid; grid-template-columns:repeat(4,1fr); border:1px solid var(--rule-hard); }
+.seg__b{
+  cursor:pointer; background:transparent; border:0; border-right:1px solid var(--rule);
+  padding:10px 4px; font-family:var(--mono); font-size:var(--fs-xs); letter-spacing:.08em;
+  color:var(--graphite); transition:.16s;
+}
+.seg__b:last-child{ border-right:0; }
+.seg__b:hover{ color:var(--ink); }
+.seg__b[aria-pressed="true"]{ background:var(--ink); color:var(--paper); }
+
+/* specification packages */
+.packs{ display:grid; gap:1px; background:var(--rule); border:1px solid var(--rule-hard); }
+.pack{
+  cursor:pointer; border:0; background:var(--paper); text-align:left;
+  padding:13px 15px; display:grid; gap:4px; transition:background .16s;
+}
+.pack:hover{ background:var(--sheet-2); }
+.pack[aria-pressed="true"]{ background:var(--sheet-2); box-shadow:inset 3px 0 0 var(--redline); }
+.pack__n{ font-family:var(--display); font-weight:700; font-size:var(--fs-base); }
+.pack__r{ font-size:var(--fs-xs); color:var(--redline); font-variant-numeric:tabular-nums; }
+.pack__r i{ font-style:normal; color:var(--faint); }
+.pack__b{ font-size:var(--fs-xs); color:var(--graphite); line-height:1.45; }
+
+/* output column */
+.est__out{ display:grid; gap:18px; min-width:0; }
+.est__head{ border:1px solid var(--rule-hard); background:var(--sheet); padding:clamp(20px,2.6vw,28px); display:grid; gap:12px; }
+.est__big{
+  font-size:clamp(2.2rem,6vw,3.4rem); font-weight:500; letter-spacing:-.03em;
+  color:var(--ink); line-height:1; font-variant-numeric:tabular-nums;
+}
+.est__big span{ color:var(--rule-hard); margin:0 .12em; }
+.est__big i{ font-style:normal; font-size:.4em; color:var(--graphite); letter-spacing:.06em; margin-left:.24em; }
+.est__meta{ display:grid; gap:1px; background:var(--rule); border:1px solid var(--rule); margin:4px 0 0; }
+@media (min-width:620px){ .est__meta{ grid-template-columns:repeat(3,1fr); } }
+.est__meta div{ background:var(--sheet); padding:11px 14px; display:grid; gap:3px; }
+.est__meta dt{ font-family:var(--mono); font-size:var(--fs-micro); letter-spacing:.12em; text-transform:uppercase; color:var(--faint); }
+.est__meta dd{ margin:0; font-size:var(--fs-sm); color:var(--ink); }
+
+.est__panel{ border:1px solid var(--rule-hard); background:var(--sheet); padding:clamp(18px,2.4vw,24px); display:grid; gap:8px; }
+.est__panel h3{ font-size:var(--fs-lg); }
+.est__panel--warn{ border-color:var(--rule-hard); background:var(--paper-sunk); }
+.est__note{ font-size:var(--fs-sm); color:var(--graphite); }
+
+.est__tbl{ width:100%; border-collapse:collapse; font-size:var(--fs-sm); margin-top:6px; }
+.est__tbl th,.est__tbl td{ text-align:left; padding:9px 0; border-bottom:1px solid var(--rule); vertical-align:top; }
+.est__tbl thead th{
+  font-family:var(--mono); font-size:var(--fs-micro); letter-spacing:.12em;
+  text-transform:uppercase; color:var(--faint); font-weight:500;
+}
+.est__tbl tbody th{ font-weight:400; padding-right:14px; }
+.est__tbl tbody th span{ display:block; font-family:var(--display); font-weight:600; color:var(--ink); font-size:var(--fs-sm); }
+.est__tbl tbody th em{ display:block; font-style:normal; font-size:var(--fs-micro); color:var(--faint); margin-top:2px; }
+.est__tbl td{ font-variant-numeric:tabular-nums; color:var(--ink-soft); white-space:nowrap; }
+.est__tbl td:last-child{ text-align:right; }
+.est__tbl tbody tr:last-child th,.est__tbl tbody tr:last-child td{ border-bottom:0; }
+.est__tbl--pay tbody th{ font-family:var(--body); color:var(--ink-soft); }
+
+/* share bar sits behind the percentage */
+.est__tbl td .bar{
+  display:inline-block; height:7px; width:var(--p); min-width:6px;
+  background:var(--redline); opacity:.48; margin-right:10px; vertical-align:middle;
+}
+
+.ticks--plain{ border:0; background:transparent; gap:0; }
+.ticks--plain li{ background:transparent; padding:7px 0; border-bottom:1px solid var(--rule); }
+.ticks--plain li:last-child{ border-bottom:0; }
+.ticks--plain li::before{ border-color:var(--graphite); }
+
+.est__cta{ border:1px solid var(--redline); background:var(--redline-wash); padding:clamp(18px,2.4vw,24px); display:grid; gap:14px; }
+.est__cta p{ font-size:var(--fs-sm); color:var(--ink); max-width:62ch; }
+.est__fine{ font-size:var(--fs-xs); color:var(--faint); max-width:70ch; }
+
+/* ============================================================
+   18. Print — owners print the estimate and the specification
+   ============================================================ */
+@media print{
+  :root{ --paper:#fff; --paper-sunk:#fff; --sheet:#fff; --sheet-2:#fff;
+         --ink:#111; --ink-soft:#222; --graphite:#444; --faint:#666;
+         --grid:#fff; --rule:#bbb; --rule-hard:#888; --redline:#000; }
+  body{ background:#fff !important; background-image:none !important; }
+  body::before, .rail, .hdr, .navdrawer, .themer, .btn, .cta, .est__cta,
+  .crumbs, .fnav, .filters, .pager, .skip{ display:none !important; }
+  .est{ grid-template-columns:1fr; }
+  .est__form{ position:static; }
+  .sheet{ padding-block:12px; }
+  .est__panel, .est__head, .spec{ break-inside:avoid; border:1px solid #999; }
+  .est__tbl td .bar{ display:none; }
+  a[href]::after{ content:""; }
+  .foot{ border-top:1px solid #999; }
+}
