@@ -4,9 +4,9 @@ import { founders } from "@/lib/site";
 export default function TriangleDiagram() {
   const v: [number, number][] = [[62, 372], [280, 108], [498, 372]];
   const labels = [
-    { p: v[1], f: founders[1], ny: -46, ry: -26 },
-    { p: v[0], f: founders[0], ny: 40, ry: 60 },
-    { p: v[2], f: founders[2], ny: 40, ry: 60 },
+    { p: v[1], f: founders[0], ny: -46, ry: -26 },  // apex — first in the list
+    { p: v[0], f: founders[1], ny: 40, ry: 60 },    // bottom left
+    { p: v[2], f: founders[2], ny: 40, ry: 60 },    // bottom right
   ];
   return (
     <svg className="dwg" viewBox="0 0 560 530" role="img"

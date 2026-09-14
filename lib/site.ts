@@ -50,24 +50,24 @@ export const site = {
 export const founders = [
   {
     no: "01",
+    name: "Janardhan Reddy",
+    role: "Founder — Planning & Estimation",
+    vertex: "Cost & schedule",
+    bio: "Prepares the bill of quantities, rate analysis and programme. Tracks stage-wise billing against work actually completed, so the cost never drifts quietly.",
+  },
+  {
+    no: "02",
     name: "Chaithanya Reddy",
     role: "Founder — Client & Design",
     vertex: "Client & design",
     bio: "Runs client relationships, design coordination and commercial terms. Every drawing set and every agreement is signed off here before work starts on site.",
   },
   {
-    no: "02",
+    no: "03",
     name: "Tejeswar Reddy",
     role: "Founder — Projects & Execution",
     vertex: "Site & execution",
     bio: "Owns the site. Labour, materials, sequencing and quality checks at every stage from excavation through handover, with a weekly photo record for the client.",
-  },
-  {
-    no: "03",
-    name: "Janardhan Reddy",
-    role: "Founder — Planning & Estimation",
-    vertex: "Cost & schedule",
-    bio: "Prepares the bill of quantities, rate analysis and programme. Tracks stage-wise billing against work actually completed, so the cost never drifts quietly.",
   },
 ] as const;
 
